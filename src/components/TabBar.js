@@ -12,10 +12,17 @@ export default function TabBar({state, navigation}) {
                 {
                     routes.map(route => {
                         console.log(route);
+
                         return(
                             <Tab
                                 tab={route}
-                                icon='home'
+                                icon={
+                                    route['name'] === 'Main' ? 'spotify' :
+                                    route['name'] === 'Profile' ? 'internet-explorer' :
+                                    route['name'] === 'Training' ? 'podcast' :
+                                    route['name'] === 'Map' ? 'snapchat' :
+                                    route['name'] === 'Settings' ? 'signing' : 'home'
+                                }
                                 // onPress={}
                                 // color={}
                                 key={route.key}
